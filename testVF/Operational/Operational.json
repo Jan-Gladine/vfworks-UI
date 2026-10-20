@@ -1,0 +1,53 @@
+{
+    "_name": "operational",
+    "_description": "tbd",
+    "_verbose": false,
+    "_GUID": "6b76cebd-d697-4ed5-b615-4ea4eeb72653",
+    "_timestamp": "2026-10-20 16:00:49.930284",
+    "_modelStructures": [],
+    "_activeModelStructure": null,
+    "_modelReference": null,
+    "_runtime_monitors": [
+        {
+            "_name": "AccuracyMonitor",
+            "_description": "",
+            "_verbose": false,
+            "_GUID": "5039b49d-4948-4a78-8c9f-a811e3dfa294",
+            "_timestamp": "2026-10-20 16:02:49.790940",
+            "_status": "unknown",
+            "_type": "RunTime",
+            "_validate_point_function": {},
+            "_packageName": "testVF",
+            "_require_custom_code_file": true,
+            "_custom_code_file": "AccuracyMonitor.py",
+            "observes": [
+                {
+                    "_name": "SPEC1",
+                    "_description": "",
+                    "_verbose": false,
+                    "_GUID": "01daf33c-32b6-456b-b7f3-6194d58ad742",
+                    "_timestamp": "2026-10-20 16:01:29.145741",
+                    "_feature": "Accuracy",
+                    "_status": "unknown",
+                    "_type": "property_custom",
+                    "_evaluationType": "property_custom",
+                    "_value": {
+                        "_name": "tbd",
+                        "_description": "",
+                        "_verbose": false,
+                        "_GUID": "01616289-6eab-4318-8b38-b98874581e72",
+                        "_timestamp": "2026-10-20 16:01:29.145741",
+                        "value": ""
+                    }
+                }
+            ],
+            "spec_status": {
+                "Accuracy": "unknown"
+            },
+            "last_observed_values": {
+                "Accuracy": 0.0
+            }
+        }
+    ],
+    "_design_time_monitors": []
+}

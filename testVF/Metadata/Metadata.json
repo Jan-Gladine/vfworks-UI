@@ -1,0 +1,45 @@
+{
+    "_name": "metadata",
+    "_description": "tbd",
+    "_verbose": false,
+    "_GUID": "b1773ede-de7c-40c2-8f41-383b039c61f3",
+    "_timestamp": "2026-10-20 16:00:49.930284",
+    "_specifications": [
+        {
+            "_name": "SPEC1",
+            "_description": "",
+            "_verbose": false,
+            "_GUID": "01daf33c-32b6-456b-b7f3-6194d58ad742",
+            "_timestamp": "2026-10-20 16:01:29.145741",
+            "_feature": "Accuracy",
+            "_status": "unknown",
+            "_type": "property_custom",
+            "_evaluationType": "property_custom",
+            "_value": {
+                "_name": "tbd",
+                "_description": "",
+                "_verbose": false,
+                "_GUID": "01616289-6eab-4318-8b38-b98874581e72",
+                "_timestamp": "2026-10-20 16:01:29.145741",
+                "value": ""
+            }
+        }
+    ],
+    "_properties": [
+        {
+            "_name": "Accuray",
+            "_description": "",
+            "_verbose": false,
+            "_GUID": "d41bb013-f2cd-4252-b152-b2846bc3c858",
+            "_timestamp": "2026-10-20 16:02:24.701296",
+            "_domain": "CONTROL",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 0,
+            "_satisfies": [
+                "01daf33c-32b6-456b-b7f3-6194d58ad742"
+            ]
+        }
+    ]
+}

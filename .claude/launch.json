@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "vfbuilder",
+      "runtimeExecutable": "uv",
+      "runtimeArgs": [
+        "run",
+        "vfbuilder",
+        "--no-browser",
+        "--port",
+        "8642"
+      ],
+      "port": 8642
+    }
+  ]
+}

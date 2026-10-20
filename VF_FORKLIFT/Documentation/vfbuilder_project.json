@@ -1,0 +1,17 @@
+{
+  "id": "40cf6ccb-08ae-4bb3-9791-8e7a4aad1b5b",
+  "name": "VF_FORKLIFT",
+  "description": "",
+  "created": "2026-10-16 11:49:42.110750",
+  "schema_version": 1,
+  "experiments": [],
+  "specifications": [],
+  "properties": [],
+  "model_structures": [],
+  "monitors": [],
+  "export": {
+    "directory": "C:\\Users\\jan_g\\VScode Projects\\vfworks-UI",
+    "package_name": "VF_FORKLIFT",
+    "archive": true
+  }
+}

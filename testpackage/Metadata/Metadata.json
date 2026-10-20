@@ -1,0 +1,45 @@
+{
+    "_name": "metadata",
+    "_description": "tbd",
+    "_verbose": false,
+    "_GUID": "3743493e-fa2a-4af6-a49d-b3e63dcb777c",
+    "_timestamp": "2026-10-13 17:29:28.171819",
+    "_specifications": [
+        {
+            "_name": "SPEC1",
+            "_description": "accuracy",
+            "_verbose": false,
+            "_GUID": "dd5ef952-492b-40b9-bb72-50f89a70404f",
+            "_timestamp": "2026-10-13 17:24:42.010138",
+            "_feature": "mAP",
+            "_status": "unknown",
+            "_type": "property_custom",
+            "_evaluationType": "property_custom",
+            "_value": {
+                "_name": "tbd",
+                "_description": "accuracy",
+                "_verbose": false,
+                "_GUID": "be8708ce-ad84-5204-980d-435a06155695",
+                "_timestamp": "2026-10-13 17:24:42.010138",
+                "value": "accuracy"
+            }
+        }
+    ],
+    "_properties": [
+        {
+            "_name": "accuracy",
+            "_description": "",
+            "_verbose": false,
+            "_GUID": "6938a638-ac70-4c10-8dc8-08a27ceab1f2",
+            "_timestamp": "2026-10-13 17:26:52.187812",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 0,
+            "_satisfies": [
+                "dd5ef952-492b-40b9-bb72-50f89a70404f"
+            ]
+        }
+    ]
+}

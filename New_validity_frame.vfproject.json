@@ -1,0 +1,55 @@
+{
+  "id": "eabf991b-3b4c-4439-9454-550875356fff",
+  "name": "New validity frame",
+  "description": "",
+  "created": "2026-10-14 11:58:07.563714",
+  "schema_version": 1,
+  "experiments": [],
+  "specifications": [
+    {
+      "id": "39cda434-48e1-4f1c-aacb-7072c36e534e",
+      "name": "SPEC1",
+      "description": "demo speck",
+      "created": "2026-10-14 11:58:23.868759",
+      "feature": "distributionShift",
+      "type": "PROPERTY_CUSTOM",
+      "values": {}
+    }
+  ],
+  "properties": [
+    {
+      "id": "dfdeeb96-057c-4510-a972-c0750cab71a3",
+      "name": "distributionShift",
+      "description": "",
+      "created": "2026-10-14 11:59:11.964493",
+      "kind": "influence_factor",
+      "domain": "NONE",
+      "unit": "UNIT_none",
+      "datatype": "FLOAT_64",
+      "min": 0,
+      "max": 0,
+      "satisfies": [
+        "39cda434-48e1-4f1c-aacb-7072c36e534e"
+      ]
+    }
+  ],
+  "model_structures": [
+    {
+      "id": "03a0338b-e2ca-467e-af01-90f0bf78cb06",
+      "name": "MonitoredYoloModel",
+      "description": "",
+      "created": "2026-10-14 11:59:47.771942",
+      "model_type": "MonitoredYoloModel_loader",
+      "model_ref": "",
+      "redundancy": 1,
+      "inports": [],
+      "outports": []
+    }
+  ],
+  "monitors": [],
+  "export": {
+    "directory": "C:\\Users\\jan_g\\VScode Projects\\vfworks-UI",
+    "package_name": "demoVF",
+    "archive": true
+  }
+}

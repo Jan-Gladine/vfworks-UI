@@ -1,0 +1,28 @@
+{
+    "_name": "experiments",
+    "_description": "tbd",
+    "_verbose": false,
+    "_GUID": "9a789bc5-2267-4c6f-bca9-59c7bcc71a49",
+    "_timestamp": "2026-10-20 16:00:49.930284",
+    "_experiments": [
+        {
+            "_name": "demo experiment",
+            "_description": "",
+            "_verbose": false,
+            "_GUID": "8a5aef9b-7903-4786-a92a-dc6ca0d1ac10",
+            "_timestamp": "2026-10-20 16:00:52.686852",
+            "_label": "nominal",
+            "_conditions": [
+                {
+                    "_name": "Temperature",
+                    "_description": "",
+                    "_verbose": false,
+                    "_GUID": "c14b927e-9572-4f1d-8163-9dbdba54076b",
+                    "_timestamp": "2026-10-20 16:01:12.720471",
+                    "_value": 40
+                }
+            ],
+            "_measurements": []
+        }
+    ]
+}

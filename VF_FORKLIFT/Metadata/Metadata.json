@@ -1,0 +1,725 @@
+{
+    "_name": "metadata",
+    "_description": "tbd",
+    "_verbose": false,
+    "_GUID": "01cd0c51-f0ae-40a4-b535-054b5d01ed93",
+    "_timestamp": "2026-10-20 12:21:32.160037",
+    "_specifications": [
+        {
+            "_name": "ModelAccuracy",
+            "_description": "REQ_1: Model accuracy >= 60% during validation",
+            "_verbose": false,
+            "_GUID": "26e64025-9eae-4002-b886-9eddba9b0c51",
+            "_timestamp": "2026-09-11 16:16:08.800361",
+            "_feature": "accuracy",
+            "_status": "unknown",
+            "_type": "property_min",
+            "_evaluationType": "property_min",
+            "_value": {
+                "_name": "tbd",
+                "_description": "tbd",
+                "_verbose": false,
+                "_GUID": "0763a25c-c2ae-4c08-985a-a25a7f133f97",
+                "_timestamp": "2026-10-20 12:21:32.172039",
+                "_valueMin": 0.6
+            }
+        },
+        {
+            "_name": "PedestrianRecall",
+            "_description": "REQ_2: Pedestrian detection recall >= 99% on validation data",
+            "_verbose": false,
+            "_GUID": "8527b0e9-f26a-4de0-96ef-987b6eb6329b",
+            "_timestamp": "2026-09-11 16:16:08.800361",
+            "_feature": "pedestrian_recall",
+            "_status": "unknown",
+            "_type": "property_min",
+            "_evaluationType": "property_min",
+            "_value": {
+                "_name": "tbd",
+                "_description": "tbd",
+                "_verbose": false,
+                "_GUID": "9de7037b-3f2c-4668-8ff3-d35b7b103b72",
+                "_timestamp": "2026-10-20 12:21:32.172039",
+                "_valueMin": 0.99
+            }
+        },
+        {
+            "_name": "PedestrianPrecision",
+            "_description": "REQ_3: Pedestrian detection precision >= 95% on validation data",
+            "_verbose": false,
+            "_GUID": "4fa7b74d-1ea4-46cf-8243-d79a4e225167",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_feature": "pedestrian_precision",
+            "_status": "unknown",
+            "_type": "property_min",
+            "_evaluationType": "property_min",
+            "_value": {
+                "_name": "tbd",
+                "_description": "tbd",
+                "_verbose": false,
+                "_GUID": "2bd96140-6237-4890-92de-c18bbd23d8b3",
+                "_timestamp": "2026-10-20 12:21:32.172039",
+                "_valueMin": 0.95
+            }
+        },
+        {
+            "_name": "DatasetCompleteness",
+            "_description": "REQ_4: At least 100 samples for each detection class (forklift, goods, palletjack and person)",
+            "_verbose": false,
+            "_GUID": "474a6c2e-61e1-4341-b1fb-2b23d601eaa0",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_feature": "dataset_class_sample_count",
+            "_status": "unknown",
+            "_type": "property_min",
+            "_evaluationType": "property_min",
+            "_value": {
+                "_name": "tbd",
+                "_description": "tbd",
+                "_verbose": false,
+                "_GUID": "ef22b5d1-74e2-442a-9459-9896b72faf1b",
+                "_timestamp": "2026-10-20 12:21:32.172039",
+                "_valueMin": 100
+            }
+        },
+        {
+            "_name": "ODDCoverage",
+            "_description": "REQ_5: At least 95% of the defined WarehouseODD state space is represented in the CameraDataset",
+            "_verbose": false,
+            "_GUID": "e98426d5-c89c-4c1b-85bd-7c8fdc5e075f",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_feature": "odd_coverage",
+            "_status": "unknown",
+            "_type": "property_custom",
+            "_evaluationType": "property_custom",
+            "_value": {
+                "_name": "tbd",
+                "_description": "REQ_5: At least 95% of the defined WarehouseODD state space is represented in the CameraDataset",
+                "_verbose": false,
+                "_GUID": "9cc2ed4d-d0be-4be3-b54d-ec0752ba8a6a",
+                "_timestamp": "2026-10-20 12:21:32.172039",
+                "value": "REQ_5: At least 95% of the defined WarehouseODD state space is represented in the CameraDataset"
+            }
+        },
+        {
+            "_name": "ODDRepresentativeness",
+            "_description": "REQ_6: At least 100 pedestrian instances shall be available for the represented ODD states in CameraDataset",
+            "_verbose": false,
+            "_GUID": "1ba59348-9498-4080-be95-0392a966caf8",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_feature": "pedestrian_samples_per_odd_state",
+            "_status": "unknown",
+            "_type": "property_min",
+            "_evaluationType": "property_min",
+            "_value": {
+                "_name": "tbd",
+                "_description": "tbd",
+                "_verbose": false,
+                "_GUID": "192ba764-1aa2-40cd-87dc-c48c8f9306fd",
+                "_timestamp": "2026-10-20 12:21:32.172039",
+                "_valueMin": 100
+            }
+        },
+        {
+            "_name": "RecordingSeparation",
+            "_description": "REQ_7: Training, validation and test datasets must originate from separate recording sessions",
+            "_verbose": false,
+            "_GUID": "d5a383eb-70a0-495e-a67c-fed20e4959f9",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_feature": "recording_session_separation",
+            "_status": "unknown",
+            "_type": "property_custom",
+            "_evaluationType": "property_custom",
+            "_value": {
+                "_name": "tbd",
+                "_description": "REQ_7: Training, validation and test datasets must originate from separate recording sessions",
+                "_verbose": false,
+                "_GUID": "f430947e-2160-4853-87b2-d0ec4a53d914",
+                "_timestamp": "2026-10-20 12:21:32.172039",
+                "value": "REQ_7: Training, validation and test datasets must originate from separate recording sessions"
+            }
+        },
+        {
+            "_name": "CrossDatasetSimilarity",
+            "_description": "REQ_8: DINOv2 embeddings across dataset partitions shall have cosine similarity <= 0.95",
+            "_verbose": false,
+            "_GUID": "20cc2915-82c8-4d0b-bad6-6089ec4cfc0c",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_feature": "cross_dataset_embedding_similarity",
+            "_status": "unknown",
+            "_type": "property_custom",
+            "_evaluationType": "property_custom",
+            "_value": {
+                "_name": "tbd",
+                "_description": "REQ_8: DINOv2 embeddings across dataset partitions shall have cosine similarity <= 0.95",
+                "_verbose": false,
+                "_GUID": "11935595-6a0e-4d10-9e6a-993eb017f1aa",
+                "_timestamp": "2026-10-20 12:21:32.172039",
+                "value": "REQ_8: DINOv2 embeddings across dataset partitions shall have cosine similarity <= 0.95"
+            }
+        },
+        {
+            "_name": "DatasetLeakage",
+            "_description": "REQ_9: Maximum Mean Discrepancy (MMD) shall provide no statistically significant evidence of dataset leakage",
+            "_verbose": false,
+            "_GUID": "fdab195e-0f24-4da8-a6f5-0cb1dc13a5d2",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_feature": "dataset_leakage",
+            "_status": "unknown",
+            "_type": "property_custom",
+            "_evaluationType": "property_custom",
+            "_value": {
+                "_name": "tbd",
+                "_description": "REQ_9: Maximum Mean Discrepancy (MMD) shall provide no statistically significant evidence of dataset leakage",
+                "_verbose": false,
+                "_GUID": "527000e6-6bbb-471a-b83c-72357d144021",
+                "_timestamp": "2026-10-20 12:21:32.172039",
+                "value": "REQ_9: Maximum Mean Discrepancy (MMD) shall provide no statistically significant evidence of dataset leakage"
+            }
+        },
+        {
+            "_name": "AnnotationAudit",
+            "_description": "REQ_10: Independently review 10% of annotations with an error rate <= 0.5%",
+            "_verbose": false,
+            "_GUID": "bc353a5b-b466-4a7b-baf7-94cf17fb3055",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_feature": "annotation_error_rate",
+            "_status": "unknown",
+            "_type": "property_max",
+            "_evaluationType": "property_max",
+            "_value": {
+                "_name": "tbd",
+                "_description": "tbd",
+                "_verbose": false,
+                "_GUID": "de65c2c9-78d6-4773-8b2b-b6108148efc0",
+                "_timestamp": "2026-10-20 12:21:32.172039",
+                "_valueMax": 0.005
+            }
+        },
+        {
+            "_name": "BoundingBoxIoU",
+            "_description": "REQ_11: Mean bounding-box IoU shall be >= 0.95",
+            "_verbose": false,
+            "_GUID": "932bc90b-6cf0-499b-8ca3-351ab3cd08a6",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_feature": "bounding_box_iou",
+            "_status": "unknown",
+            "_type": "property_min",
+            "_evaluationType": "property_min",
+            "_value": {
+                "_name": "tbd",
+                "_description": "tbd",
+                "_verbose": false,
+                "_GUID": "58ed4411-7661-4bca-b16f-89913b72f288",
+                "_timestamp": "2026-10-20 12:21:32.172039",
+                "_valueMin": 0.95
+            }
+        },
+        {
+            "_name": "InterAnnotatorAgreement",
+            "_description": "REQ_12: Cohen's Kappa shall be >= 0.90",
+            "_verbose": false,
+            "_GUID": "98d148dd-e865-45b0-a1e1-de6d0d62ef63",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_feature": "cohen_kappa",
+            "_status": "unknown",
+            "_type": "property_min",
+            "_evaluationType": "property_min",
+            "_value": {
+                "_name": "tbd",
+                "_description": "tbd",
+                "_verbose": false,
+                "_GUID": "2ed08d15-e0da-4334-abfc-6d536525452d",
+                "_timestamp": "2026-10-20 12:21:32.172039",
+                "_valueMin": 0.9
+            }
+        },
+        {
+            "_name": "ShadowRecall",
+            "_description": "REQ_13: Pedestrian recall shall be >= 95% under the WarehouseODD.shadow condition",
+            "_verbose": false,
+            "_GUID": "b9894643-6c33-410f-a928-9f371f0f35c4",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_feature": "pedestrian_recall",
+            "_status": "unknown",
+            "_type": "property_min",
+            "_evaluationType": "property_min",
+            "_value": {
+                "_name": "tbd",
+                "_description": "tbd",
+                "_verbose": false,
+                "_GUID": "527fdac0-01af-48a1-b649-3ce504eb74f0",
+                "_timestamp": "2026-10-20 12:21:32.172039",
+                "_valueMin": 0.95
+            }
+        },
+        {
+            "_name": "PalletProximityRecall",
+            "_description": "REQ_14: Pedestrian recall shall be >= 95% under the WarehouseODD.palletProximity condition",
+            "_verbose": false,
+            "_GUID": "77d4c871-001f-4ba5-a7de-23f4b5c97eb4",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_feature": "pedestrian_recall",
+            "_status": "unknown",
+            "_type": "property_min",
+            "_evaluationType": "property_min",
+            "_value": {
+                "_name": "tbd",
+                "_description": "tbd",
+                "_verbose": false,
+                "_GUID": "ac635229-6faa-4dfd-9239-3614f7536e72",
+                "_timestamp": "2026-10-20 12:21:32.172039",
+                "_valueMin": 0.95
+            }
+        },
+        {
+            "_name": "ShelfProximityRecall",
+            "_description": "REQ_15: Pedestrian recall shall be >= 95% under the WarehouseODD.shelfProximity condition",
+            "_verbose": false,
+            "_GUID": "59f6e875-de69-4243-b82b-3008d0d86e4a",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_feature": "pedestrian_recall",
+            "_status": "unknown",
+            "_type": "property_min",
+            "_evaluationType": "property_min",
+            "_value": {
+                "_name": "tbd",
+                "_description": "tbd",
+                "_verbose": false,
+                "_GUID": "f047bf18-561a-4494-95ab-861b2d328e69",
+                "_timestamp": "2026-10-20 12:21:32.172039",
+                "_valueMin": 0.95
+            }
+        },
+        {
+            "_name": "PartialOcclusionRecall",
+            "_description": "REQ_16: Pedestrian recall shall be >= 95% under the WarehouseODD.occlusion condition",
+            "_verbose": false,
+            "_GUID": "22f11fc6-da7f-4d92-907f-49f4a330694e",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_feature": "pedestrian_recall",
+            "_status": "unknown",
+            "_type": "property_min",
+            "_evaluationType": "property_min",
+            "_value": {
+                "_name": "tbd",
+                "_description": "tbd",
+                "_verbose": false,
+                "_GUID": "484b9404-0405-4998-bc2d-42ed090f1603",
+                "_timestamp": "2026-10-20 12:21:32.172039",
+                "_valueMin": 0.95
+            }
+        },
+        {
+            "_name": "ConfidenceCalibration",
+            "_description": "REQ_17: False-positive rate shall be <= 5% (current DSL representation of confidence calibration)",
+            "_verbose": false,
+            "_GUID": "c01bfe7f-8b85-4df0-a21b-daf090350ccd",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_feature": "false_positive_rate",
+            "_status": "unknown",
+            "_type": "property_max",
+            "_evaluationType": "property_max",
+            "_value": {
+                "_name": "tbd",
+                "_description": "tbd",
+                "_verbose": false,
+                "_GUID": "3d0ad513-21d1-4f46-975a-b1c40d77364f",
+                "_timestamp": "2026-10-20 12:21:32.172039",
+                "_valueMax": 0.05
+            }
+        },
+        {
+            "_name": "ImageQualityMonitoring",
+            "_description": "REQ_18: Runtime image quality shall be monitored, including brightness, blur, overexposure, saturation and camera health",
+            "_verbose": false,
+            "_GUID": "9e00a385-66d5-40ab-9bd4-15d85f9db4fa",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_feature": "image_quality",
+            "_status": "unknown",
+            "_type": "property_custom",
+            "_evaluationType": "property_custom",
+            "_value": {
+                "_name": "tbd",
+                "_description": "REQ_18: Runtime image quality shall be monitored, including brightness, blur, overexposure, saturation and camera health",
+                "_verbose": false,
+                "_GUID": "60ae8e3b-8d0a-46a0-9111-bbbc482b22e5",
+                "_timestamp": "2026-10-20 12:21:32.172039",
+                "value": "REQ_18: Runtime image quality shall be monitored, including brightness, blur, overexposure, saturation and camera health"
+            }
+        },
+        {
+            "_name": "DistributionShiftMonitoring",
+            "_description": "REQ_19: Runtime distribution shift shall be monitored using embedding/distribution-shift analysis",
+            "_verbose": false,
+            "_GUID": "6abcc234-c0ab-4c5b-be17-c656bbd1785c",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_feature": "distribution_shift",
+            "_status": "unknown",
+            "_type": "property_custom",
+            "_evaluationType": "property_custom",
+            "_value": {
+                "_name": "tbd",
+                "_description": "REQ_19: Runtime distribution shift shall be monitored using embedding/distribution-shift analysis",
+                "_verbose": false,
+                "_GUID": "d3ae0e9f-6d30-47a9-be40-58c9ab7941a4",
+                "_timestamp": "2026-10-20 12:21:32.172039",
+                "value": "REQ_19: Runtime distribution shift shall be monitored using embedding/distribution-shift analysis"
+            }
+        }
+    ],
+    "_properties": [
+        {
+            "_name": "Image",
+            "_description": "Input image from the ceiling camera",
+            "_verbose": false,
+            "_GUID": "5012a7ee-f547-42fc-8338-72a6cad6d85c",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 0,
+            "_satisfies": []
+        },
+        {
+            "_name": "Detections",
+            "_description": "Pedestrian and obstacle detections produced by the model",
+            "_verbose": false,
+            "_GUID": "d4c425c2-a958-445c-9afe-2e7154f9bf5f",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 0,
+            "_satisfies": []
+        },
+        {
+            "_name": "Confidence",
+            "_description": "Model confidence associated with detections",
+            "_verbose": false,
+            "_GUID": "5852d64d-ff96-4650-b081-3da11b1b038d",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 1,
+            "_satisfies": []
+        },
+        {
+            "_name": "Accuracy",
+            "_description": "Overall model accuracy during validation",
+            "_verbose": false,
+            "_GUID": "5ead283e-d9dd-4bd7-b2ca-17e882e8897a",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 1,
+            "_satisfies": [
+                "26e64025-9eae-4002-b886-9eddba9b0c51"
+            ]
+        },
+        {
+            "_name": "PedestrianRecall",
+            "_description": "Pedestrian detection recall",
+            "_verbose": false,
+            "_GUID": "a9baa701-61d9-4a30-9715-62acc59e76f8",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 1,
+            "_satisfies": [
+                "8527b0e9-f26a-4de0-96ef-987b6eb6329b",
+                "b9894643-6c33-410f-a928-9f371f0f35c4",
+                "77d4c871-001f-4ba5-a7de-23f4b5c97eb4",
+                "59f6e875-de69-4243-b82b-3008d0d86e4a",
+                "22f11fc6-da7f-4d92-907f-49f4a330694e"
+            ]
+        },
+        {
+            "_name": "PedestrianPrecision",
+            "_description": "Pedestrian detection precision",
+            "_verbose": false,
+            "_GUID": "25ecdf9a-a230-4c7d-9845-8490d5c78972",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 1,
+            "_satisfies": [
+                "4fa7b74d-1ea4-46cf-8243-d79a4e225167"
+            ]
+        },
+        {
+            "_name": "DatasetClassSampleCount",
+            "_description": "Number of samples available for each detection class",
+            "_verbose": false,
+            "_GUID": "581f741e-19ac-405e-93e1-9cda9fe6e01f",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "int_16",
+            "_min": 0,
+            "_max": 0,
+            "_satisfies": [
+                "474a6c2e-61e1-4341-b1fb-2b23d601eaa0"
+            ]
+        },
+        {
+            "_name": "ODDCoverage",
+            "_description": "Fraction of the defined WarehouseODD represented by the dataset",
+            "_verbose": false,
+            "_GUID": "f1a9dd90-ee62-4f03-959a-8ae57a025564",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 1,
+            "_satisfies": [
+                "e98426d5-c89c-4c1b-85bd-7c8fdc5e075f"
+            ]
+        },
+        {
+            "_name": "PedestrianSamplesPerODDState",
+            "_description": "Pedestrian instances available per represented ODD state",
+            "_verbose": false,
+            "_GUID": "f7362c41-84c0-4967-8c50-e94e8ce0e66e",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "int_16",
+            "_min": 0,
+            "_max": 0,
+            "_satisfies": [
+                "1ba59348-9498-4080-be95-0392a966caf8"
+            ]
+        },
+        {
+            "_name": "AnnotationErrorRate",
+            "_description": "Observed annotation error rate",
+            "_verbose": false,
+            "_GUID": "0325cf62-889c-4abe-bdca-c68e7214ec2d",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 1,
+            "_satisfies": [
+                "bc353a5b-b466-4a7b-baf7-94cf17fb3055"
+            ]
+        },
+        {
+            "_name": "BoundingBoxIoU",
+            "_description": "Bounding box intersection-over-union",
+            "_verbose": false,
+            "_GUID": "3349c59a-985b-4b62-a738-fd681c48caf6",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 1,
+            "_satisfies": [
+                "932bc90b-6cf0-499b-8ca3-351ab3cd08a6"
+            ]
+        },
+        {
+            "_name": "CohenKappa",
+            "_description": "Inter-annotator agreement measured using Cohen's Kappa",
+            "_verbose": false,
+            "_GUID": "8202ca41-b20c-4807-a51e-16eb43c5c303",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": -1,
+            "_max": 1,
+            "_satisfies": [
+                "98d148dd-e865-45b0-a1e1-de6d0d62ef63"
+            ]
+        },
+        {
+            "_name": "FalsePositiveRate",
+            "_description": "False-positive rate used by the current REQ_17 DSL representation",
+            "_verbose": false,
+            "_GUID": "e83a892e-5f31-4f0f-a894-6d9797e15fe1",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 1,
+            "_satisfies": [
+                "c01bfe7f-8b85-4df0-a21b-daf090350ccd"
+            ]
+        },
+        {
+            "_name": "ImageQuality",
+            "_description": "Runtime image quality information including brightness, blur, overexposure and saturation",
+            "_verbose": false,
+            "_GUID": "857dfc4c-c8d9-425a-8352-06d5a481ead7",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 0,
+            "_satisfies": [
+                "9e00a385-66d5-40ab-9bd4-15d85f9db4fa"
+            ]
+        },
+        {
+            "_name": "DistributionShift",
+            "_description": "Runtime distribution shift score",
+            "_verbose": false,
+            "_GUID": "bb27d779-9fc3-4a49-af2b-e5e9faae597f",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 0,
+            "_satisfies": [
+                "6abcc234-c0ab-4c5b-be17-c656bbd1785c"
+            ]
+        },
+        {
+            "_name": "Lighting",
+            "_description": "Warehouse lighting state: Normal or Dark",
+            "_verbose": false,
+            "_GUID": "5755a69c-864a-47bc-812c-f716fef67283",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 0,
+            "_satisfies": []
+        },
+        {
+            "_name": "Sunlight",
+            "_description": "Sunlight state: Absent or Present",
+            "_verbose": false,
+            "_GUID": "4ab9d80d-31f2-4e61-a809-eda3d8bf180c",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 0,
+            "_satisfies": []
+        },
+        {
+            "_name": "Shadow",
+            "_description": "Shadow state: Absent or Present",
+            "_verbose": false,
+            "_GUID": "26b8970e-99a1-4374-9cb7-272f33053d09",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 0,
+            "_satisfies": []
+        },
+        {
+            "_name": "PedestrianCount",
+            "_description": "Pedestrian count state: One or Multiple",
+            "_verbose": false,
+            "_GUID": "0e2f0a97-8cff-4551-839c-43df8980742e",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 0,
+            "_satisfies": []
+        },
+        {
+            "_name": "Occlusion",
+            "_description": "Pedestrian occlusion state: None or Partial",
+            "_verbose": false,
+            "_GUID": "663ea73b-0182-4c45-ab57-04e4b0658c47",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 0,
+            "_satisfies": []
+        },
+        {
+            "_name": "PedestrianLocation",
+            "_description": "Pedestrian location state: Centre or Edge",
+            "_verbose": false,
+            "_GUID": "58c63888-0d83-4445-a8b7-f8aec6ea33d1",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 0,
+            "_satisfies": []
+        },
+        {
+            "_name": "PalletProximity",
+            "_description": "Pedestrian/pallet proximity state: Near/Far",
+            "_verbose": false,
+            "_GUID": "3a98171e-e96d-4965-b199-ded9cde1d0ea",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 0,
+            "_satisfies": []
+        },
+        {
+            "_name": "ShelfProximity",
+            "_description": "Pedestrian/shelf proximity state: Near/Far",
+            "_verbose": false,
+            "_GUID": "f4535549-36e6-431c-bf9f-394ad34351fc",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 0,
+            "_satisfies": []
+        },
+        {
+            "_name": "DoorState",
+            "_description": "Warehouse door state: Open or Closed",
+            "_verbose": false,
+            "_GUID": "97dcdff5-b0c2-4aa2-afa3-55c493c78f7f",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 0,
+            "_satisfies": []
+        },
+        {
+            "_name": "ForkliftSpeed",
+            "_description": "Forklift speed, validated ODD range 0..1.5 m/s",
+            "_verbose": false,
+            "_GUID": "abc822b3-c001-4599-b1ef-78745fe4645c",
+            "_timestamp": "2026-09-11 16:16:08.801361",
+            "_domain": "None",
+            "_unit": "-",
+            "_datatype": "float_64",
+            "_min": 0,
+            "_max": 1.5,
+            "_satisfies": []
+        }
+    ]
+}

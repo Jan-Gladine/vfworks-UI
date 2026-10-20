@@ -1,0 +1,55 @@
+{
+  "id": "c68f1bd2-af1a-4328-81a9-706958f3cf86",
+  "name": "New validity frame",
+  "description": "",
+  "created": "2026-10-13 17:24:19.206276",
+  "schema_version": 1,
+  "experiments": [],
+  "specifications": [
+    {
+      "id": "dd5ef952-492b-40b9-bb72-50f89a70404f",
+      "name": "SPEC1",
+      "description": "accuracy",
+      "created": "2026-10-13 17:24:42.010138",
+      "feature": "mAP",
+      "type": "PROPERTY_CUSTOM",
+      "values": {}
+    }
+  ],
+  "properties": [
+    {
+      "id": "6938a638-ac70-4c10-8dc8-08a27ceab1f2",
+      "name": "accuracy",
+      "description": "",
+      "created": "2026-10-13 17:26:52.187812",
+      "kind": "poi",
+      "domain": "NONE",
+      "unit": "UNIT_none",
+      "datatype": "FLOAT_64",
+      "min": 0,
+      "max": 0,
+      "satisfies": [
+        "dd5ef952-492b-40b9-bb72-50f89a70404f"
+      ]
+    }
+  ],
+  "model_structures": [],
+  "monitors": [
+    {
+      "id": "75c5c08c-c2be-4903-873f-fbd9493ca83f",
+      "name": "accuracy_monitor",
+      "description": "monitors accuracy after model test phase",
+      "created": "2026-10-13 17:27:16.637396",
+      "observes": [
+        "dd5ef952-492b-40b9-bb72-50f89a70404f"
+      ],
+      "monitor_time": "MODEL_VALIDATION",
+      "custom_code_file": "accuracy_monitor.py"
+    }
+  ],
+  "export": {
+    "directory": "C:\\Users\\jan_g\\VScode Projects\\vfworks-UI",
+    "package_name": "testpackage",
+    "archive": true
+  }
+}

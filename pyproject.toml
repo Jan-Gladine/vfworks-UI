@@ -1,0 +1,34 @@
+[project]
+name = "vfbuilder"
+version = "0.1.0"
+description = "GUI for authoring vfWorks validity frames"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "nicegui>=3.18.0",
+    "vfworks>=0.0.1",
+]
+
+[project.scripts]
+vfbuilder = "vfbuilder.ui.main:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "pytest-asyncio>=1.4.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vfbuilder"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.uv]
+# vfworks pins a pycaret pre-release; uv only accepts transitive pre-releases
+# when they are named explicitly.
+constraint-dependencies = ["pycaret==4.0.0a3"]
