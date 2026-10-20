@@ -8,3 +8,10 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Validity frame packages and archives (local test data)
+*.vf
+demoVF/
+testVF/
+testpackage/
+VF_FORKLIFT/
