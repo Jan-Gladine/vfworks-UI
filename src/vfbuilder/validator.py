@@ -140,6 +140,9 @@ def validate(session: FrameSession) -> list[Issue]:
         elif ms.modelType not in builtin and ms.modelType not in loaders:
             warning(ms, f"Model type '{ms.modelType}' is not built in and "
                         f"Resources/loaders/{ms.modelType}.py does not exist in the package")
+        elif ms.modelType in loaders:
+            for problem in package_files.check_file(root, package_files.LOADERS, ms.modelType):
+                (error if problem.severity == "error" else warning)(ms, f"Loader {ms.modelType}.py, {problem}")
         if not ms.modelRef:
             warning(ms, "No model reference set")
 
@@ -157,6 +160,9 @@ def validate(session: FrameSession) -> list[Issue]:
             error(mon, f"Observes custom specification(s) {', '.join(custom)} and needs a custom code file")
         if code and code not in monitor_files:
             warning(mon, f"Custom code file '{code}' does not exist in the package's Resources/monitors")
+        elif code:
+            for problem in package_files.check_file(root, package_files.MONITORS, code):
+                (error if problem.severity == "error" else warning)(mon, f"Code file {code}, {problem}")
         by_feature = defaultdict(list)
         for spec in observed:
             if (spec.feature or "").strip():

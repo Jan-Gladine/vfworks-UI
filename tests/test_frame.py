@@ -324,3 +324,20 @@ def test_archive_with_the_package_one_folder_down_is_refused(screw, tmp_path):
     (tmp_path / "not_a_package.vf").write_bytes(b"not a zip")
     with pytest.raises(FrameError, match="not a zip archive"):
         FrameSession.open(tmp_path / "not_a_package.vf")
+
+
+def test_code_edited_in_an_archive_reaches_the_vf_on_save(screw):
+    archive = screw.save_archive()
+    screw.close()
+    session = FrameSession.open(archive)
+    try:
+        assert session.code_users(package_files.MONITORS, "trust_evaluation.py") == [
+            by_name(session.monitors, "TrustMonitor")]
+        package_files.write_code(session.package_root, package_files.MONITORS, "trust_evaluation.py", "x = 1\n")
+        session.code_file_changed()
+        assert session.dirty  # only in the temporary working copy so far
+        session.save()
+    finally:
+        session.close()
+    with zipfile.ZipFile(archive) as zf:
+        assert zf.read("Resources/monitors/trust_evaluation.py").decode().replace("\r\n", "\n") == "x = 1\n"

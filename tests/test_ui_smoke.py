@@ -145,3 +145,66 @@ async def test_file_browser_caps_large_folders_and_filters(tmp_path):
         user.find(kind=ui.input, marker=None, content="Filter by name").type("0349")
         await user.should_see("file_0349.vf")
         await user.should_not_see("more entries not shown")
+
+
+@pytest.mark.asyncio
+async def test_code_editor_edits_checks_and_saves_files(tmp_path):
+    from vfbuilder import package_files as pf
+
+    state, builders, root = make_app(tmp_path)
+    s = state.session
+    s.save()
+    async with user_simulation(root) as user:
+        await user.open("/")
+        builder = builders[0]
+        builder.selected["monitors"] = by_name(s.monitors, "TrustMonitor").GUID
+        await go(user, builder, "monitors", "Edit monitor")
+        user.find(marker="edit-code").click()  # next to the code file picker
+        await user.should_see("Monitor functions")
+        await user.should_see("Resources/monitors/trust_evaluation.py")
+        await user.should_see("used by TrustMonitor")
+
+        editor = next(iter(user.find(marker="code-editor").elements))
+        broken = "def validate(monitor=None, **kwargs)\n    return {}\n"
+        with user.client:
+            editor.set_value(broken)
+        await user.should_see("unsaved changes")
+        await user.should_see("line 1: Syntax error")
+        assert editor.decorations == [{"kind": "line", "line": 1, "class": "cm-vfb-error"}]
+        assert pf.read_code(s.package_root, pf.MONITORS, "trust_evaluation.py") != broken  # not saved yet
+
+        user.find(marker="code-save").click()
+        assert pf.read_code(s.package_root, pf.MONITORS, "trust_evaluation.py") == broken
+        await user.should_not_see("unsaved changes")
+        # the frame's validation now reports the broken file on the monitor
+        assert any(i.message.startswith("Code file trust_evaluation.py, line 1: Syntax error") for i in state.issues)
+
+        fixed = "def validate(monitor=None, **kwargs):\n    return {'label': True}\n"
+        with user.client:
+            editor.set_value(fixed)
+        user.find(marker="code-save").click()
+        assert pf.read_code(s.package_root, pf.MONITORS, "trust_evaluation.py") == fixed
+        assert not any("trust_evaluation" in i.message for i in state.issues)
+        assert not s.dirty  # a directory package: the file is on disk, nothing left to save in the frame
+
+
+@pytest.mark.asyncio
+async def test_unsaved_code_survives_switching_files(tmp_path):
+    from vfbuilder import package_files as pf
+
+    state, builders, root = make_app(tmp_path)
+    async with user_simulation(root) as user:
+        await user.open("/")
+        builder = builders[0]
+        builder.code_selected = (pf.MONITORS, "trust_evaluation.py")
+        await go(user, builder, "code", "Monitor functions")
+        with user.client:
+            next(iter(user.find(marker="code-editor").elements)).set_value("x = 1\n")
+        await user.should_see("Code files *")
+        with user.client, builder.page_root:
+            builder.edit_code(pf.LOADERS, pf.LOADER_TEMPLATE)
+        await user.should_see("Resources/loaders/MonitoredModel_loader.py")
+        with user.client, builder.page_root:
+            builder.edit_code(pf.MONITORS, "trust_evaluation.py")
+        await user.should_see("unsaved changes")
+        assert next(iter(user.find(marker="code-editor").elements)).value == "x = 1\n"

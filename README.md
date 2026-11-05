@@ -93,6 +93,27 @@ objects with the vfWorks constructor, keeps their GUID and timestamp, and swaps 
   relative to it; vfWorks resolves relative references inside the package, by default under
   `Sources/`.
 
+### Editing code files
+
+The **Code files** section lists `Resources/monitors` (monitor functions) and `Resources/loaders`
+(model loaders), with what uses each file, and edits them in a Python editor. "Edit" next to a
+monitor's code file or a model structure's model type opens the file there.
+
+- **Save** (or Ctrl+S) writes the file. In a directory package it is on disk at once; in a `.vf`
+  archive it is in vfWorks' working copy and reaches the archive when you save the frame.
+- **Revert** goes back to the file on disk; **Delete** removes the file (vfWorks' two templates
+  cannot be deleted). **New** copies the vfWorks template.
+- Unsaved text is kept per file while you switch files or sections; the section shows `*` and
+  closing or opening a frame asks before discarding it.
+- Every change is checked without running the code: syntax errors (marked on the line), a missing
+  `validate()` / `load_model()`, a `validate()` without `**kwargs`, and template code that still
+  raises `NotImplementedError`. Problems in a file a monitor or model structure uses also show up
+  in the frame's validation.
+
+vfbuilder never runs these files itself. vfWorks imports a monitor's file when the monitor is
+added to the frame (when the frame is opened, or when vfbuilder rebuilds that monitor), so an edited
+monitor function takes effect in a running frame after reopening it.
+
 **Write populatePackage.py** (Overview / Save page) writes an equivalent vfWorks script next to the
 package, for when you want to continue by hand.
 
@@ -155,7 +176,7 @@ uv run pytest    # about 30 s, most of it importing vfWorks once
 | `vfw.py` | imports vfWorks in the background; constants catalog; frame construction (shared-list workaround) |
 | `frame.py` | `FrameSession`: the live `ValidityFrame`, with lookup by GUID, add/edit/delete and rebuilds |
 | `validator.py` | checks a live frame and returns issues keyed by GUID |
-| `package_files.py` | monitor code files and model loaders in the package folder |
+| `package_files.py` | monitor code files and model loaders: list, read, write, create from template, static checks |
 | `script.py` | renders the open frame as `populatePackage.py` |
 | `graph.py` | Mermaid source for the overview graph |
-| `ui/` | the NiceGUI app |
+| `ui/` | the NiceGUI app (`ui/code.py`: the code file editor) |

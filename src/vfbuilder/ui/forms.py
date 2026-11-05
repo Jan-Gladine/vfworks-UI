@@ -382,6 +382,10 @@ def structure_form(b: Builder, ms) -> None:
     with ui.row().classes("w-full items-center no-wrap gap-1"):
         ui.select(options, label="Model type (loader)", value=ms.modelType or None, clearable=True,
                   on_change=set_type).classes("grow")
+        if ms.modelType in package_files.list_loaders(root):
+            ui.button("Edit", icon="edit", on_click=lambda: b.edit_code(
+                package_files.LOADERS, f"{ms.modelType}.py")).props("flat dense no-caps").mark("edit-code").tooltip(
+                f"Open Resources/loaders/{ms.modelType}.py in the code editor")
         ui.button("New loader...", icon="add", on_click=new_loader).props("flat dense no-caps")
 
     async def browse_ref() -> None:
@@ -489,6 +493,9 @@ def monitor_form(b: Builder, mon) -> None:
     with ui.row().classes("w-full items-center no-wrap gap-1"):
         ui.select(files, label="Custom code file (Resources/monitors)", value=current, clearable=True,
                   on_change=set_file).classes("grow")
+        if current and current in package_files.list_monitor_files(root):
+            ui.button("Edit", icon="edit", on_click=lambda: b.edit_code(package_files.MONITORS, current)).props(
+                "flat dense no-caps").mark("edit-code").tooltip(f"Open Resources/monitors/{current} in the code editor")
         ui.button("Create from template...", icon="add", on_click=new_file).props("flat dense no-caps")
     custom = [display_name(sp) for sp in mon.observes or [] if sp.type == CUSTOM]
     if custom:

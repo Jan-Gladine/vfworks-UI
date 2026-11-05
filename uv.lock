@@ -3708,7 +3708,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "nicegui", specifier = ">=3.18.0" },
-    { name = "vfworks", specifier = ">=0.0.1" },
+    { name = "vfworks", specifier = ">=0.0.2b1" },
 ]
 
 [package.metadata.requires-dev]
@@ -3719,7 +3719,7 @@ dev = [
 
 [[package]]
 name = "vfworks"
-version = "0.0.1"
+version = "0.0.2b1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
@@ -3747,9 +3747,9 @@ dependencies = [
     { name = "ultralytics", version = "8.4.123", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform == 'darwin'" },
     { name = "ultralytics", version = "8.4.176", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'darwin'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/7f/97/c66eb629829da6e80efb40e71f6f4ffe2213864ceb197926e2d050753048/vfworks-0.0.1.tar.gz", hash = "sha256:818188166084c33be9105ea949ac1afae911f10b18423302f8b40836a20a0fd4", size = 39652, upload-time = "2026-10-13T12:54:35.454Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/96/9e/7607924fb274826686ef6097d29d251ae4cbe3227a3d4260583d77bd67c4/vfworks-0.0.2b1.tar.gz", hash = "sha256:82a145e076b83661c14261d1c05aa9ee98dc908264bb2ba70ce04453fa6af71e", size = 40044, upload-time = "2026-11-05T15:51:59.282Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/08/3a/7115b0a6bbeb52de1401f6199dada298015626605281aed51781eaf8d17a/vfworks-0.0.1-py3-none-any.whl", hash = "sha256:d898d08979567311fa660358bca9ed9da02959b77b2d02a16e937f3d0a9d0b1b", size = 52608, upload-time = "2026-10-13T12:54:36.326Z" },
+    { url = "https://files.pythonhosted.org/packages/da/74/864c9ad76b46f1f86b1eb96e7c9d9ab6fbc5b959c7adb0bef4e7309ec4b8/vfworks-0.0.2b1-py3-none-any.whl", hash = "sha256:efec6f3bba1f5ff2798ff8f2f6601bff1461b3c294fb05c9ec0bfd2e429afb69", size = 53541, upload-time = "2026-11-05T15:51:58.017Z" },
 ]
 
 [[package]]

@@ -7,7 +7,7 @@ from nicegui import run, ui
 
 from vfbuilder import vfw
 from vfbuilder.frame import FrameError, FrameSession
-from vfbuilder.ui import overview
+from vfbuilder.ui import code, overview
 from vfbuilder.ui.filebrowser import browse
 from vfbuilder.ui.forms import SECTIONS, Section, display_name
 from vfbuilder.ui.state import AppState
@@ -31,6 +31,8 @@ class Builder:
         self.section = "frame"
         self.selected: dict[str, str | None] = {}
         self.busy = False
+        self.code_selected: tuple[str, str] | None = None  # (folder, file name) open in the code editor
+        self.code_buffers: dict[tuple[str, str], str] = {}  # unsaved editor text per code file
 
     @property
     def session(self) -> FrameSession:
@@ -39,6 +41,7 @@ class Builder:
     # ------------------------------------------------------------------ layout
     def build(self) -> None:
         ui.query("body").classes("bg-gray-100")
+        ui.add_css(code.EDITOR_CSS)
         with ui.header().classes("items-center gap-2 py-2"):
             ui.icon("verified", size="md")
             ui.label("vfbuilder").classes("text-lg font-bold")
@@ -110,6 +113,7 @@ class Builder:
             entry("frame", "Frame", "badge", None)
             for sec in SECTIONS.values():
                 entry(sec.key, sec.title, sec.icon, getattr(self.session, sec.attr))
+            entry("code", "Code files" + (" *" if self.code_buffers else ""), "code", None)
             ui.separator()
             entry("overview", "Overview / Save", "hub", None)
 
@@ -121,6 +125,8 @@ class Builder:
             self.frame_page()
         elif self.section == "overview":
             overview.page(self)
+        elif self.section == "code":
+            code.page(self)
         else:
             self.list_page(SECTIONS[self.section])
 
@@ -137,6 +143,10 @@ class Builder:
         section, top_guid = location
         self.selected[section] = top_guid
         self.go(section)
+
+    def edit_code(self, folder: str, file_name: str) -> None:
+        self.code_selected = (folder, file_name)
+        self.go("code")
 
     def changed(self, structural: bool = False) -> None:
         """Call after every edit. ``structural`` rebuilds the page (elements added, removed or rebuilt)."""
@@ -305,11 +315,15 @@ class Builder:
     # ----------------------------------------------------------------- frames
     def reset_view(self) -> None:
         self.section, self.selected = "frame", {}
+        self.code_selected, self.code_buffers = None, {}
         self.refresh_all()
 
     async def discard_ok(self) -> bool:
-        return not self.state.dirty or await self.confirm(
-            "Discard unsaved changes?", "The open validity frame has changes that were not saved.", "Discard")
+        if not self.state.dirty and not self.code_buffers:
+            return True
+        unsaved = ["the validity frame"] if self.state.dirty else []
+        unsaved += [name for _, name in self.code_buffers]
+        return await self.confirm("Discard unsaved changes?", "Not saved: " + ", ".join(unsaved) + ".", "Discard")
 
     async def _run(self, action, success: str) -> bool:
         """Run a frame action off the event loop (it may wait for vfworks to load)."""

@@ -23,6 +23,10 @@ def test_screw_frame_has_only_the_loader_warning(screw):
         ("warning", "Model type 'monitoredModel' is not built in and Resources/loaders/monitoredModel.py "
                     "does not exist in the package")]
     package_files.create_loader_file(screw.package_root, "monitoredModel")
+    assert [i.message for i in validate(screw)] == [
+        "Loader monitoredModel.py, line 53: load_model() still raises NotImplementedError (template code)"]
+    package_files.write_code(screw.package_root, package_files.LOADERS, "monitoredModel.py",
+                             "def load_model(model_location, validityframe=None):\n    return model_location\n")
     assert validate(screw) == []
 
 

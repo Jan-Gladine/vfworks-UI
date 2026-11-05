@@ -241,6 +241,18 @@ class FrameSession:
                     refs.append(Reference(meas.GUID, "measurement", f"{exp.name}.{meas.name}", "measures"))
         return refs
 
+    def code_users(self, folder: str, file_name: str) -> list:
+        """Monitors whose custom code file, or model structures whose loader, is this file."""
+        if folder == "monitors":
+            return [m for m in self.monitors if custom_code_file(m) == file_name]
+        return [ms for ms in self.model_structures if ms.modelType and f"{ms.modelType}.py" == file_name]
+
+    def code_file_changed(self) -> None:
+        """A file in Resources was written. A directory package has it on disk already; an archive's
+        working copy only reaches the .vf on the next save."""
+        if self.archive:
+            self._changed()
+
     def _changed(self):
         self.dirty = True
 

@@ -5,10 +5,17 @@ from vfbuilder import package_files, vfw
 from vfbuilder.frame import FrameSession
 
 
+TRUST_CODE = '''def validate(monitor=None, **kwargs):
+    """Trust is valid when the model is confident enough."""
+    return {"label": kwargs.get("label", 0) >= 0.5}
+'''
+
+
 def build_screw_frame(directory, package_name: str = "VF_SCREW") -> FrameSession:
     """The screw-detection validity frame from the vfWorks populatePackage.py example."""
     session = FrameSession.new(directory, package_name, name="Screw_detection_model_VF", description="...")
     package_files.create_monitor_file(session.package_root, "trust_evaluation.py")
+    package_files.write_code(session.package_root, package_files.MONITORS, "trust_evaluation.py", TRUST_CODE)
 
     exp = session.add_experiment("EXP1")
     session.set(exp, "description", "Blue light experiment")
