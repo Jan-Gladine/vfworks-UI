@@ -40,7 +40,7 @@ def page(b: Builder) -> None:
         first = next(((f, n) for f in pf.FOLDERS for n in files[f] if n != pf.TEMPLATES[f]), None)
         b.code_selected = first or next(((f, n) for f in pf.FOLDERS for n in files[f]), None)
 
-    with ui.element("div").classes("grid grid-cols-1 xl:grid-cols-[22rem_1fr] gap-4 w-full items-start"):
+    with ui.element("div").classes("grid grid-cols-1 xl:grid-cols-[22rem_minmax(0,1fr)] gap-4 w-full items-start"):
         with ui.card().classes("w-full"):
             ui.label("Code files").classes("text-lg font-medium")
             if b.session.archive:

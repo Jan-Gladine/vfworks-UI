@@ -6,6 +6,8 @@ names. vfbuilder works directly on a live vfWorks `ValidityFrame`: creating, ope
 frame are vfWorks calls, and the package on disk is a normal vfWorks package (directory or `.vf`
 archive) with no vfbuilder files in it.
 
+![Adding requirement REQ_13 (ShadowRecall) of the forklift validity frame in vfbuilder](docs/walkthrough.gif)
+
 ## Install
 
 Python 3.11 or newer. vfWorks pulls in torch, ultralytics and pycaret, so the first install is
@@ -180,3 +182,6 @@ uv run pytest    # about 30 s, most of it importing vfWorks once
 | `script.py` | renders the open frame as `populatePackage.py` |
 | `graph.py` | Mermaid source for the overview graph |
 | `ui/` | the NiceGUI app (`ui/code.py`: the code file editor) |
+
+`docs/walkthrough.gif` is recorded with Playwright by `scripts/record_walkthrough.py` against a running
+vfbuilder (`uv run --with playwright python scripts/record_walkthrough.py`); see the script's docstring.
